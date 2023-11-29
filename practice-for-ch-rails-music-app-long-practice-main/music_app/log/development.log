@@ -11,3 +11,1233 @@ Migrating to CreateUsers (20231129183532)
   [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231129183532') RETURNING "version"[0m
   [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2023-11-29 16:16:06 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/peter/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/peter/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.1.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 3.2ms | Allocations: 353)
+Completed 200 OK in 20ms (Views: 11.4ms | ActiveRecord: 0.0ms | Allocations: 5084)
+
+
+Started GET "/users" for ::1 at 2023-11-29 16:16:16 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users/new" for ::1 at 2023-11-29 16:16:26 -0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 279)
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 6590)
+Completed 200 OK in 51ms (Views: 23.6ms | ActiveRecord: 1.5ms | Allocations: 21733)
+
+
+Started POST "/users" for ::1 at 2023-11-29 16:16:49 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"peter@email.whatevr", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 774)
+
+
+
+ActionController::InvalidAuthenticityToken - Can't verify CSRF token authenticity.:
+
+Started POST "/__better_errors/d5a7fa938f86247b/variables" for ::1 at 2023-11-29 16:16:49 -0500
+Started GET "/users/new" for ::1 at 2023-11-29 16:18:08 -0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2051)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 3266)
+Completed 200 OK in 16ms (Views: 9.4ms | ActiveRecord: 1.4ms | Allocations: 8265)
+
+
+Started POST "/users" for ::1 at 2023-11-29 16:18:15 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"peter@email.whatevr", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 692)
+
+
+
+ActionController::InvalidAuthenticityToken - Can't verify CSRF token authenticity.:
+
+Started POST "/__better_errors/95ee501d0d99930b/variables" for ::1 at 2023-11-29 16:18:15 -0500
+Started POST "/__better_errors/95ee501d0d99930b/eval" for ::1 at 2023-11-29 16:18:58 -0500
+Started POST "/__better_errors/95ee501d0d99930b/eval" for ::1 at 2023-11-29 16:19:09 -0500
+Started POST "/users" for ::1 at 2023-11-29 16:21:37 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"peter@email.whatevr", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 734)
+
+
+
+ActionController::InvalidAuthenticityToken - Can't verify CSRF token authenticity.:
+
+Started POST "/__better_errors/cd68f108e0030823/variables" for ::1 at 2023-11-29 16:21:37 -0500
+Started GET "/users/new" for ::1 at 2023-11-29 16:21:43 -0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 164178.3ms | Allocations: 107887)
+  Rendered layout layouts/application.html.erb (Duration: 164193.5ms | Allocations: 110026)
+Completed 200 OK in 164224ms (Views: 164198.5ms | ActiveRecord: 2.6ms | Allocations: 115111)
+
+
+Started GET "/users/new" for ::1 at 2023-11-29 16:24:31 -0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 3012.8ms | Allocations: 2813)
+  Rendered layout layouts/application.html.erb (Duration: 3020.2ms | Allocations: 4055)
+Completed 200 OK in 3032ms (Views: 3025.0ms | ActiveRecord: 1.6ms | Allocations: 9842)
+
+
+Started POST "/users" for ::1 at 2023-11-29 16:24:43 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"peter@email.whatevr", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 3521)
+
+
+
+NameError - uninitialized constant User::BCrypt
+        self.password_digest = BCrypt::Password.create(password)
+                               ^^^^^^:
+  app/models/user.rb:32:in `password='
+  app/controllers/users_controller.rb:8:in `create'
+
+Started POST "/__better_errors/acf95aca6adac73e/variables" for ::1 at 2023-11-29 16:24:43 -0500
+Started GET "/users/new" for ::1 at 2023-11-29 16:25:47 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 5450.7ms | Allocations: 109578)
+  Rendered layout layouts/application.html.erb (Duration: 5494.9ms | Allocations: 112975)
+Completed 200 OK in 5531ms (Views: 5509.2ms | ActiveRecord: 1.8ms | Allocations: 132070)
+
+
+Started POST "/users" for ::1 at 2023-11-29 16:26:02 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"Peter.l.nolan@gmail.com", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:17:in `generate_unique_session_token'
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "Peter.l.nolan@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "Peter.l.nolan@gmail.com"], ["password_digest", "[FILTERED]"], ["session_token", "[FILTERED]"], ["created_at", "2023-11-29 21:26:03.045140"], ["updated_at", "2023-11-29 21:26:03.045140"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (7.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 306ms (ActiveRecord: 9.7ms | Allocations: 10766)
+
+
+Started GET "/users/1" for ::1 at 2023-11-29 16:26:03 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 1504)
+Completed 200 OK in 13ms (Views: 3.2ms | ActiveRecord: 0.5ms | Allocations: 3648)
+
+
+Started GET "/users/new" for ::1 at 2023-11-29 16:34:02 -0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 7987.9ms | Allocations: 2860)
+Started GET "/users/1" for ::1 at 2023-11-29 16:34:10 -0500
+  Rendered layout layouts/application.html.erb (Duration: 8004.9ms | Allocations: 5434)
+Completed 500 Internal Server Error in 8015ms (ActiveRecord: 0.0ms | Allocations: 10037)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>MusicApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <body>
+  <% if logged_in? %>
+    <h2>Welcome, <% current_user.email %>!</h2>
+      <form action="<%= session_url %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="submit" value="Logout">
+      </form>
+      <% if flash[:messages] %>
+        <% flash[:messages].each do |message| %>
+          <%= message %>
+        <% end %>
+      <% end %>
+      <% if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+          <%= error %>
+        <% end %>
+      <% end %>
+    <%= yield %>
+  </body>
+</html>:
+  app/views/layouts/application.html.erb:40:in `'
+  app/controllers/users_controller.rb:4:in `new'
+
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 120)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 1321)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.7ms | Allocations: 8150)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>MusicApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <body>
+  <% if logged_in? %>
+    <h2>Welcome, <% current_user.email %>!</h2>
+      <form action="<%= session_url %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="submit" value="Logout">
+      </form>
+      <% if flash[:messages] %>
+        <% flash[:messages].each do |message| %>
+          <%= message %>
+        <% end %>
+      <% end %>
+      <% if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+          <%= error %>
+        <% end %>
+      <% end %>
+    <%= yield %>
+  </body>
+</html>:
+  app/views/layouts/application.html.erb:40:in `'
+
+Started POST "/__better_errors/d8863931cfaa72c3/variables" for ::1 at 2023-11-29 16:34:10 -0500
+Started GET "/users/1" for ::1 at 2023-11-29 16:37:53 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 124)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 1326)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 2.3ms | Allocations: 8040)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>MusicApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <body>
+  <% if logged_in? %>
+    <h2>Welcome, <%= current_user.email %>!</h2>
+      <form action="<%= session_url %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="submit" value="Logout">
+      </form>
+      <% if flash[:messages] %>
+        <% flash[:messages].each do |message| %>
+          <%= message %>
+        <% end %>
+      <% end %>
+      <% if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+          <%= error %>
+        <% end %>
+      <% end %>
+    <%= yield %>
+  </body>
+</html>:
+  app/views/layouts/application.html.erb:41:in `'
+
+Started POST "/__better_errors/9a71f47f200b6192/variables" for ::1 at 2023-11-29 16:37:53 -0500
+Started GET "/users/1" for ::1 at 2023-11-29 16:38:00 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 1261)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms | Allocations: 2059)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>MusicApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <body>
+  <% if logged_in? %>
+    <h2>Welcome, <%= current_user.email %>!</h2>
+      <form action="<%= session_url %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="submit" value="Logout">
+      </form>
+      <% if flash[:messages] %>
+        <% flash[:messages].each do |message| %>
+          <%= message %>
+        <% end %>
+      <% end %>
+      <% if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+          <%= error %>
+        <% end %>
+      <% end %>
+    <%= yield %>
+  </body>
+</html>:
+  app/views/layouts/application.html.erb:41:in `'
+
+Started POST "/__better_errors/f1862a97474715f5/variables" for ::1 at 2023-11-29 16:38:01 -0500
+Started GET "/users/new" for ::1 at 2023-11-29 16:38:19 -0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 15.9ms | Allocations: 2745)
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 3885)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.0ms | Allocations: 4174)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>MusicApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <body>
+  <% if logged_in? %>
+    <h2>Welcome, <%= current_user.email %>!</h2>
+      <form action="<%= session_url %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="submit" value="Logout">
+      </form>
+      <% if flash[:messages] %>
+        <% flash[:messages].each do |message| %>
+          <%= message %>
+        <% end %>
+      <% end %>
+      <% if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+          <%= error %>
+        <% end %>
+      <% end %>
+    <%= yield %>
+  </body>
+</html>:
+  app/views/layouts/application.html.erb:41:in `'
+  app/controllers/users_controller.rb:4:in `new'
+
+Started GET "/users/new" for ::1 at 2023-11-29 16:38:21 -0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 10016.7ms | Allocations: 2438)
+  Rendered layout layouts/application.html.erb (Duration: 10020.7ms | Allocations: 3796)
+Completed 500 Internal Server Error in 10022ms (ActiveRecord: 0.0ms | Allocations: 4021)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>MusicApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <body>
+  <% if logged_in? %>
+    <h2>Welcome, <%= current_user.email %>!</h2>
+      <form action="<%= session_url %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="submit" value="Logout">
+      </form>
+      <% if flash[:messages] %>
+        <% flash[:messages].each do |message| %>
+          <%= message %>
+        <% end %>
+      <% end %>
+      <% if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+          <%= error %>
+        <% end %>
+      <% end %>
+    <%= yield %>
+  </body>
+</html>:
+  app/views/layouts/application.html.erb:41:in `'
+  app/controllers/users_controller.rb:4:in `new'
+
+Started POST "/__better_errors/ae984c27d480ae5b/variables" for ::1 at 2023-11-29 16:38:31 -0500
+Started GET "/users/new" for ::1 at 2023-11-29 16:40:27 -0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 4875.8ms | Allocations: 2835)
+  Rendered layout layouts/application.html.erb (Duration: 4881.1ms | Allocations: 3902)
+Completed 500 Internal Server Error in 4891ms (ActiveRecord: 1.4ms | Allocations: 8961)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>MusicApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <body>
+  <% if logged_in? %>
+    <h2>Welcome, <%= current_user.email %>!</h2>
+      <form action="<%= session_url %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="submit" value="Logout">
+      </form>
+    <%= yield %>
+  </body>
+</html>:
+  app/views/layouts/application.html.erb:32:in `'
+  app/controllers/users_controller.rb:4:in `new'
+
+Started POST "/__better_errors/bd558500ad15640a/variables" for ::1 at 2023-11-29 16:40:32 -0500
+Started GET "/users/new" for ::1 at 2023-11-29 16:41:27 -0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2853.3ms | Allocations: 2847)
+  Rendered layout layouts/application.html.erb (Duration: 2857.4ms | Allocations: 4040)
+Completed 500 Internal Server Error in 2867ms (ActiveRecord: 1.6ms | Allocations: 9061)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>MusicApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <body>
+  <% debugger %>
+  <% if logged_in? %>
+    <h2>Welcome, <%= current_user.email %>!</h2>
+      <form action="<%= session_url %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="submit" value="Logout">
+      </form>
+     <% if flash[:messages] %>
+        <% flash[:messages].each do |message| %>
+          <%= message %>
+        <% end %>
+      <% end %>
+      <% if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+          <%= error %>
+        <% end %>
+      <% end %>
+    <%= yield %>
+  </body>
+</html>:
+  app/views/layouts/application.html.erb:44:in `'
+  app/controllers/users_controller.rb:4:in `new'
+
+Started POST "/__better_errors/58f98f235bb2d0c0/variables" for ::1 at 2023-11-29 16:41:30 -0500
+Started GET "/users/new" for ::1 at 2023-11-29 16:43:36 -0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 7145.2ms | Allocations: 2453)
+  Rendered layout layouts/application.html.erb (Duration: 7151.7ms | Allocations: 3671)
+Completed 500 Internal Server Error in 7157ms (ActiveRecord: 0.0ms | Allocations: 3926)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>MusicApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <body>
+  <% debugger %>
+  <% if logged_in? %>
+    <h2>Welcome, <%= current_user.email %>!</h2>
+      <form action="<%= session_url %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="submit" value="Logout">
+      </form>
+     <% if flash[:messages] %>
+        <% flash[:messages].each do |message| %>
+          <%= message %>
+        <% end %>
+      <% end %>
+      <% if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+          <%= error %>
+        <% end %>
+      <% end %>
+    <%= yield %>
+  </body>
+</html>:
+  app/views/layouts/application.html.erb:44:in `'
+  app/controllers/users_controller.rb:4:in `new'
+
+Started POST "/__better_errors/b1b69bb14fbf6401/variables" for ::1 at 2023-11-29 16:43:43 -0500
+Started POST "/__better_errors/b1b69bb14fbf6401/variables" for ::1 at 2023-11-29 16:47:58 -0500
+Started GET "/users/new" for ::1 at 2023-11-29 16:52:51 -0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 7169.1ms | Allocations: 2861)
+  Rendered layout layouts/application.html.erb (Duration: 7172.3ms | Allocations: 4020)
+Completed 500 Internal Server Error in 7183ms (ActiveRecord: 0.0ms | Allocations: 8346)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>MusicApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <body>
+  <% if logged_in? %>
+    <h2>Welcome, <%= current_user.email %>!</h2>
+    <form action="<%= session_url %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="Logout">
+    </form>
+    <% if flash[:messages] %>
+      <% flash[:messages].each do |message| %>
+        <%= message %>
+      <% end %>
+    <% end %>
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |error| %>
+        <%= error %>
+      <% end %>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>:
+  app/views/layouts/application.html.erb:44:in `'
+  app/controllers/users_controller.rb:4:in `new'
+
+Started POST "/__better_errors/3642aeec3797a014/variables" for ::1 at 2023-11-29 16:52:58 -0500
+Started GET "/users/new" for ::1 at 2023-11-29 16:53:39 -0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 8397.6ms | Allocations: 2864)
+  Rendered layout layouts/application.html.erb (Duration: 8403.5ms | Allocations: 4084)
+Completed 500 Internal Server Error in 8415ms (ActiveRecord: 2.7ms | Allocations: 9090)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>MusicApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <body>
+  <% if logged_in? %>
+    <h2>Welcome, <%= current_user.email %>!</h2>
+    <% if flash[:messages] %>
+      <% flash[:messages].each do |message| %>
+        <%= message %>
+      <% end %>
+    <% end %>
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |error| %>
+        <%= error %>
+      <% end %>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>:
+  app/views/layouts/application.html.erb:38:in `'
+  app/controllers/users_controller.rb:4:in `new'
+
+Started POST "/__better_errors/f6b3065557c1a732/variables" for ::1 at 2023-11-29 16:53:48 -0500
+Started GET "/users/new" for ::1 at 2023-11-29 16:54:07 -0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 640)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 1894)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.4ms | Allocations: 6953)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>MusicApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <body>
+  <% if logged_in? %>
+    <h2>Welcome, <%= current_user.email %>!</h2>
+    <% if flash[:messages] %>
+      <% flash[:messages].each do |message| %>
+        <%= message %>
+      <% end %>
+    <% end %>
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |error| %>
+        <%= error %>
+      <% end %>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>:
+  app/views/layouts/application.html.erb:38:in `'
+  app/controllers/users_controller.rb:4:in `new'
+
+Started POST "/__better_errors/2d29cff5f0cb8262/variables" for ::1 at 2023-11-29 16:54:07 -0500
+Started GET "/users/new" for ::1 at 2023-11-29 16:55:46 -0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 641)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 1928)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.5ms | Allocations: 6934)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>MusicApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <body>
+  <% if logged_in? %>
+    <h2>Welcome, <%= current_user.email %>!</h2>
+    <form action="<%= session_url %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="submit" value="Logout">
+    </form>
+    <% if flash[:messages] %>
+      <% flash[:messages].each do |message| %>
+        <%= message %>
+      <% end %>
+    <% end %>
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |error| %>
+        <%= error %>
+      <% end %>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>:
+  app/views/layouts/application.html.erb:44:in `'
+  app/controllers/users_controller.rb:4:in `new'
+
+Started POST "/__better_errors/039a53526e87092d/variables" for ::1 at 2023-11-29 16:55:46 -0500
+Started GET "/users/new" for ::1 at 2023-11-29 16:55:54 -0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 10.8ms | Allocations: 365)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 1624)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms | Allocations: 1864)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>MusicApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <body>
+  <% if logged_in? %>
+    <h2>Welcome, <%= current_user.email %>!</h2>
+    <form action="<%= session_url %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="submit" value="Logout">
+    </form>
+    <% if flash[:messages] %>
+      <% flash[:messages].each do |message| %>
+        <%= message %>
+      <% end %>
+    <% end %>
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |error| %>
+        <%= error %>
+      <% end %>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>:
+  app/views/layouts/application.html.erb:44:in `'
+  app/controllers/users_controller.rb:4:in `new'
+
+Started POST "/__better_errors/b49a95fe39728bf3/variables" for ::1 at 2023-11-29 16:55:54 -0500
+Started GET "/users/new" for ::1 at 2023-11-29 16:56:43 -0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 7.1ms | Allocations: 1186)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 1322)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.5ms | Allocations: 6498)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <h2>Create New User</h2>
+<%= # auth_token %>
+<form action="<%= users_url %>" method="post">
+    <label for="email">Email
+        <input type="text" id="email" name="user[email]" value="<%= @user.email %>">
+    </label>
+    <label for="password">Password
+        <input type="password" id="email" name="user[password]" value="">
+    </label>
+    <input type="submit" value="Create User">
+</form>:
+  app/views/users/new.html.erb:5:in `'
+  app/views/users/new.html.erb:5:in `'
+  app/views/users/new.html.erb:7:in `'
+  app/views/users/new.html.erb:8:in `'
+  app/views/users/new.html.erb:8:in `'
+  app/views/users/new.html.erb:8:in `'
+  app/views/users/new.html.erb:8:in `'
+  app/views/users/new.html.erb:9:in `'
+  app/views/users/new.html.erb:13:in `'
+  app/views/users/new.html.erb:15:in `'
+  app/views/users/new.html.erb:15:in `'
+  app/views/users/new.html.erb:16:in `'
+  app/views/users/new.html.erb:18:in `'
+  app/views/users/new.html.erb:18:in `'
+  app/controllers/users_controller.rb:4:in `new'
+
+Started POST "/__better_errors/091ced8d4bc0cfd3/variables" for ::1 at 2023-11-29 16:56:43 -0500
+Started GET "/" for ::1 at 2023-11-29 16:59:20 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/peter/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/peter/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.1.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.8ms | Allocations: 353)
+Completed 200 OK in 11ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 5084)
+
+
+Started GET "/users/new" for ::1 at 2023-11-29 16:59:29 -0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 2322)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 4248)
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 3.3ms | Allocations: 19428)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>MusicApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <body>
+  <% if logged_in? %>
+    <h2>Welcome, <%= current_user.email %>!</h2>
+    <form action="<%= session_url %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="submit" value="Logout">
+    </form>
+    <% if flash[:messages] %>
+      <% flash[:messages].each do |message| %>
+        <%= message %>
+      <% end %>
+    <% end %>
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |error| %>
+        <%= error %>
+      <% end %>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>:
+  app/views/layouts/application.html.erb:44:in `'
+  app/controllers/users_controller.rb:4:in `new'
+
+Started GET "/users/new" for ::1 at 2023-11-29 16:59:30 -0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 445)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 1718)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 1993)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>MusicApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <body>
+  <% if logged_in? %>
+    <h2>Welcome, <%= current_user.email %>!</h2>
+    <form action="<%= session_url %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="submit" value="Logout">
+    </form>
+    <% if flash[:messages] %>
+      <% flash[:messages].each do |message| %>
+        <%= message %>
+      <% end %>
+    <% end %>
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |error| %>
+        <%= error %>
+      <% end %>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>:
+  app/views/layouts/application.html.erb:44:in `'
+  app/controllers/users_controller.rb:4:in `new'
+
+Started POST "/__better_errors/e53af7d3b0480fe0/variables" for ::1 at 2023-11-29 16:59:30 -0500
+Started GET "/users/new" for ::1 at 2023-11-29 17:00:00 -0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 216)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 1504)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 3.8ms | Allocations: 6548)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>MusicApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <body>
+  <% if logged_in? %>
+    <h2>Welcome, <%= current_user.email %>!</h2>
+    <form action="<%= session_url %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="submit" value="Logout">
+    </form>
+    <% if flash[:messages] %>
+      <% flash[:messages].each do |message| %>
+        <%= message %>
+      <% end %>
+    <% end %>
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |error| %>
+        <%= error %>
+      <% end %>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>:
+  app/views/layouts/application.html.erb:44:in `'
+  app/controllers/users_controller.rb:4:in `new'
+
+Started POST "/__better_errors/07848e1a1b3fd995/variables" for ::1 at 2023-11-29 17:00:00 -0500
+Started GET "/users/new" for ::1 at 2023-11-29 17:02:04 -0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.3ms | Allocations: 96)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 1386)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.4ms | Allocations: 6388)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>MusicApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <body>
+  <% if logged_in? %>
+    <h2>Welcome, <%= current_user.email %>!</h2>
+    <form action="<%= session_url %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="submit" value="Logout">
+    </form>
+    <% if flash[:messages] %>
+      <% flash[:messages].each do |message| %>
+        <%= message %>
+      <% end %>
+    <% end %>
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |error| %>
+        <%= error %>
+      <% end %>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>:
+  app/views/layouts/application.html.erb:44:in `'
+  app/controllers/users_controller.rb:4:in `new'
+
+Started POST "/__better_errors/5c2b308006cb2ca1/variables" for ::1 at 2023-11-29 17:02:04 -0500
+Started GET "/users/new" for ::1 at 2023-11-29 17:04:13 -0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 641)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 3652)
+Completed 200 OK in 20ms (Views: 14.2ms | ActiveRecord: 1.4ms | Allocations: 8674)
+
+
+Started POST "/users" for ::1 at 2023-11-29 17:04:22 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"Peter.l.nolan@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:17:in `generate_unique_session_token'
+  [1m[36mUser Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "Peter.l.nolan@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.4ms | Allocations: 76)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 1103)
+Completed 200 OK in 282ms (Views: 6.4ms | ActiveRecord: 1.9ms | Allocations: 10246)
+
+
+Started GET "/users/new" for ::1 at 2023-11-29 17:04:31 -0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 418)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 1332)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 1544)
+
+
+Started GET "/users/1" for ::1 at 2023-11-29 17:08:08 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 126)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 1340)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.6ms | Allocations: 8171)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>MusicApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <body>
+  <% if logged_in? %>
+    <h2>Welcome, <%= current_user.email %>!</h2>
+    <form action="<%= session_url %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="submit" value="Logout">
+</form>
+  <%= auth_token %>
+    <% if flash[:messages] %>
+    <% flash[:messages].each do |message| %>
+      <%= message %>
+    <% end %>
+  <% end %>
+  <% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+      <%= error %>
+    <% end %>
+  <% end %>
+    <%= yield %>
+  </body>
+</html>:
+  app/views/layouts/application.html.erb:42:in `'
+
+Started POST "/__better_errors/338819e5de5b7eb5/variables" for ::1 at 2023-11-29 17:08:08 -0500
+Started GET "/users/1" for ::1 at 2023-11-29 17:08:46 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 124)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 1341)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.5ms | Allocations: 8095)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>MusicApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <body>
+  <% if logged_in? %>
+    <h2>Welcome, <%= current_user.email %>!</h2>
+    <form action="<%= session_url %>" method="post">
+      <%= auth_token %>
+      <input type="hidden" name="_method" value="delete">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="submit" value="Logout">
+</form>
+    <% if flash[:messages] %>
+    <% flash[:messages].each do |message| %>
+      <%= message %>
+    <% end %>
+  <% end %>
+  <% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+      <%= error %>
+    <% end %>
+  <% end %>
+    <%= yield %>
+  </body>
+</html>:
+  app/views/layouts/application.html.erb:43:in `'
+
+Started POST "/__better_errors/1e691dbd6f36eda1/variables" for ::1 at 2023-11-29 17:08:47 -0500
+Started GET "/users/new" for ::1 at 2023-11-29 17:08:51 -0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 609)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 1879)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2188)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>MusicApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <body>
+  <% if logged_in? %>
+    <h2>Welcome, <%= current_user.email %>!</h2>
+    <form action="<%= session_url %>" method="post">
+      <%= auth_token %>
+      <input type="hidden" name="_method" value="delete">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="submit" value="Logout">
+</form>
+    <% if flash[:messages] %>
+    <% flash[:messages].each do |message| %>
+      <%= message %>
+    <% end %>
+  <% end %>
+  <% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+      <%= error %>
+    <% end %>
+  <% end %>
+    <%= yield %>
+  </body>
+</html>:
+  app/views/layouts/application.html.erb:43:in `'
+  app/controllers/users_controller.rb:4:in `new'
+
+Started GET "/users/new" for ::1 at 2023-11-29 17:08:51 -0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 390)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 1659)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 1875)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>MusicApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <body>
+  <% if logged_in? %>
+    <h2>Welcome, <%= current_user.email %>!</h2>
+    <form action="<%= session_url %>" method="post">
+      <%= auth_token %>
+      <input type="hidden" name="_method" value="delete">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="submit" value="Logout">
+</form>
+    <% if flash[:messages] %>
+    <% flash[:messages].each do |message| %>
+      <%= message %>
+    <% end %>
+  <% end %>
+  <% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+      <%= error %>
+    <% end %>
+  <% end %>
+    <%= yield %>
+  </body>
+</html>:
+  app/views/layouts/application.html.erb:43:in `'
+  app/controllers/users_controller.rb:4:in `new'
+
+Started POST "/__better_errors/6bf3a6518e3a76d2/variables" for ::1 at 2023-11-29 17:08:51 -0500
+Started GET "/users/new" for ::1 at 2023-11-29 17:13:15 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 6.8ms | Allocations: 2477)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 4447)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 1.4ms | Allocations: 23502)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>MusicApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <body>
+  <% if logged_in? %>
+    <h2>Welcome, <%= current_user.email %>!</h2>
+    <form action="<%= session_url %>" method="post">
+      <%= auth_token %>
+      <input type="hidden" name="_method" value="delete">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="submit" value="Logout">
+    </form>
+    <% if flash[:messages] %>
+    <% flash[:messages].each do |message| %>
+      <%= message %>
+    <% end %>
+  <% end %>
+  <% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+      <%= error %>
+    <% end %>
+  <% end %>
+    <%= yield %>
+  </body>
+</html>:
+  app/views/layouts/application.html.erb:43:in `'
+  app/controllers/users_controller.rb:4:in `new'
+
+Started POST "/__better_errors/96a36b8db4bf2b25/variables" for ::1 at 2023-11-29 17:13:15 -0500
